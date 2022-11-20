@@ -12,7 +12,13 @@
     <script>
         //Creating a Scene
         var scene = new THREE.Scene();
-        scene.background = new THREE.Color('#581845');
+        scene.background = new THREE.Color('#000000');
+        scene.fog = new THREE.Fog('#FF00FF', 3, 5);
+
+        const loader = new THREE.TextureLoader();
+        loader.load('./background.jpg', function (texture) {
+            scene.background = texture;
+        })
 
         //add camera
         var camera = new THREE.PerspectiveCamera(
@@ -33,7 +39,7 @@
 
         // add Geometry
         const geometry = new THREE.BoxGeometry();
-        const material = new THREE.MeshBasicMaterial({color: 0x00ff00, wireframe: true})
+        const material = new THREE.MeshBasicMaterial({color: 0x00ff00, wireframe: false})
         const cube = new THREE.Mesh(geometry, material)
 
         scene.add(cube)
