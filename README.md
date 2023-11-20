@@ -1,2 +1,2 @@
 # hello-cube
-my first hello world with threejs
+my first hello world cube with threejs
